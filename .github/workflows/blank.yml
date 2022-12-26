@@ -38,10 +38,14 @@ jobs:
 
     - name: Create Namespace
       run: 
-        kubectl create namespace eksbackupdemo2
+        kubectl create namespace eksbackupdemo3
     - name: add Helm Chart
       run:
         helm repo add my-repo https://charts.bitnami.com/bitnami    
     - name: Install wordpress
       run:    
-        helm install my-release my-repo/wordpress -n eksbackupdemo2
+        helm install my-release my-repo/wordpress -n eksbackupdemo3
+    - name: Install velero in eks
+      run:  
+        velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.2.0 --bucket awseksbackup12 --backup-location-config region=us-east-1 --snapshot-location-config region=us-east-1 
+      
