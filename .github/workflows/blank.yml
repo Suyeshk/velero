@@ -34,6 +34,7 @@ jobs:
     - name: Install velero
       run:      
         curl -fsSL -o velero-v1.4.2-linux-amd64.tar.gz https://github.com/vmware-tanzu/velero/releases/download/v1.4.2/velero-v1.4.2-linux-amd64.tar.gz
-    - name: Install velero in eks
-      run:
-        velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.2.0 --bucket awseksbackup12 --backup-location-config region=us-east-1 --snapshot-location-config region=us-east-1 --no-secret 
+    - name: Install velero
+      run: 
+        kubectl create namespace eksbackupdemo1
+        kubectl create deployment nginx --image=nginx -n eksbackupdemo
