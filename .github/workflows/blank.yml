@@ -37,4 +37,4 @@ jobs:
     - name: Install velero
       run: 
         kubectl create namespace eksbackupdemo1
-        kubectl create deployment nginx --image=nginx -n eksbackupdemo
+        helm install my-release my-repo/wordpress -n eksbackupdemo1
