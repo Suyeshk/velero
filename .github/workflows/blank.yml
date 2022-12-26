@@ -34,8 +34,9 @@ jobs:
     - name: Install velero
       run:      
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
-
-
+    - name: Install velerow
+      run:  
+        tar -xzvf velero.tar.gz
     - name: Create Namespace
       run: 
         kubectl create namespace eksbackupdemo3
