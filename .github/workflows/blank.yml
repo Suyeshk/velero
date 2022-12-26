@@ -36,5 +36,7 @@ jobs:
         curl -fsSL -o velero-v1.4.2-linux-amd64.tar.gz https://github.com/vmware-tanzu/velero/releases/download/v1.4.2/velero-v1.4.2-linux-amd64.tar.gz
     - name: Install velero
       run: 
-        kubectl create namespace eksbackupdemo1
+        create namespace eksbackupdemo1
+    - name: Install config
+      run:    
         helm install my-release my-repo/wordpress -n eksbackupdemo1
