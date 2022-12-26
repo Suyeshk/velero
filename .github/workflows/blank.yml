@@ -41,9 +41,10 @@ jobs:
         pwd
         ls -lrth
         echo "testing1"
-        velero
-        echo "testing2"
         ./velero
+        
+        echo "testing2"
+        
 
 
     
