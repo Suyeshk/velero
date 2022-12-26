@@ -31,25 +31,14 @@ jobs:
     - name: Install Helm
       run:  
         curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-    - name: Install velero
-      run:      
+    - name: Install Velero
+      run: |
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
-    - name: Install velero2
-      run:  
-        tar -xzvf velero.tar.gz
-    - name: Add Velero to PATH
-      run: 
-       echo 'export PATH=$PATH:$GITHUB_WORKSPACE/velero-v1.5.2-linux-amd64' >> $GITHUB_ENV source $GITH
+        tar -xvzf velero.tar.gz
+        sudo mv velero /usr/local/bin/
+        velero version
 
-    - name: Create Namespace
-      run: 
-        kubectl create namespace eksbackupdemo6
-    - name: add Helm Chart
-      run:
-        helm repo add my-repo https://charts.bitnami.com/bitnami    
-    - name: Install wordpress
-      run:    
-        helm install my-release my-repo/wordpress -n eksbackupdemo6
+
     - name: Install velero in eks
       run:  
-        velero backup create notification --include-namespaces eksbackupdemo3
+        velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.2.0 --bucket awseksbackup12 --backup-location-config region=us-east-1 --snapshot-location-config region=us-east-1 
