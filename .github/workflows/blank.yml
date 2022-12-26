@@ -37,6 +37,9 @@ jobs:
     - name: Install velero
       run: 
         kubectl create namespace eksbackupdemo1
-    - name: Install config
+    - name: add Helm Chart
+      run:
+        helm repo add my-repo https://charts.bitnami.com/bitnami    
+    - name: Install wordpress
       run:    
         helm install my-release my-repo/wordpress -n eksbackupdemo1
