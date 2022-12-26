@@ -36,10 +36,10 @@ jobs:
         curl -fsSL -o velero-v1.4.2-linux-amd64.tar.gz https://github.com/vmware-tanzu/velero/releases/download/v1.4.2/velero-v1.4.2-linux-amd64.tar.gz
     - name: Install velero
       run: 
-        kubectl create namespace eksbackupdemo1
+        kubectl create namespace eksbackupdemo2
     - name: add Helm Chart
       run:
         helm repo add my-repo https://charts.bitnami.com/bitnami    
     - name: Install wordpress
       run:    
-        helm install my-release my-repo/wordpress -n eksbackupdemo1
+        helm install my-release my-repo/wordpress -n eksbackupdemo2
