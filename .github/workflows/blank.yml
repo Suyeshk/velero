@@ -48,6 +48,5 @@ jobs:
       run: |
           cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
           pwd
-          ./velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.2.0 --bucket awseksbackup12 --backup-location-config region=us-east-1 --snapshot-location-config region=us-east-1 --no-secret
-
+          ./velero backup create notification --include-namespaces eksbackupdemo3
     
