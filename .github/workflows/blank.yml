@@ -34,9 +34,13 @@ jobs:
     - name: Install velero
       run:      
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
-    - name: Install velerow
+    - name: Install velero2
       run:  
         tar -xzvf velero.tar.gz
+    - name: Add Velero to PATH
+      run: 
+       echo 'export PATH=$PATH:$GITHUB_WORKSPACE/velero-v1.5.2-linux-amd64' >> $GITHUB_ENV source $GITH
+
     - name: Create Namespace
       run: 
         kubectl create namespace eksbackupdemo5
