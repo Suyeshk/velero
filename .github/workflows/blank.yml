@@ -41,7 +41,7 @@ jobs:
         pwd
         ls -lrth
         echo "testing1"
-        ./velero
+        ./velero version
         
         echo "testing2"
         
