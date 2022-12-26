@@ -40,10 +40,8 @@ jobs:
         cd velero-v1.5.2-linux-amd64
         pwd
         ls -lrth
-        sudo mv velero C:\ProgramFiles\Velero
+        cat LICENSE
         velero version
 
 
-    - name: Install velero in eks
-      run:  
-        velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.2.0 --bucket awseksbackup12 --backup-location-config region=us-east-1 --snapshot-location-config region=us-east-1 
+    
