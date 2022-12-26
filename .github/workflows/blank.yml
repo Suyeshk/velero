@@ -34,7 +34,7 @@ jobs:
     - name: Install velero
       run:      
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz
-        tar -xzvf velero.tar.gz
+        tar - velero.tar.gz
 
     - name: Create Namespace
       run: 
