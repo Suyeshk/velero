@@ -40,8 +40,10 @@ jobs:
         cd velero-v1.5.2-linux-amd64
         pwd
         ls -lrth
-        cat LICENSE
-        velero version
+        echo "testing1"
+        velero
+        echo "testing2"
+        ./velero
 
 
     
