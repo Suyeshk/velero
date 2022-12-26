@@ -33,7 +33,7 @@ jobs:
         curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
     - name: Install velero
       run:      
-        curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
+        curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz
         tar -xzvf velero.tar.gz
 
     - name: Create Namespace
