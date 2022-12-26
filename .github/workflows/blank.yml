@@ -37,6 +37,9 @@ jobs:
         tar -xvzf velero.tar.gz
         pwd
         ls -lrth
+        cd velero-v1.5.2-linux-amd64
+        pwd
+        ls -lrth
         sudo mv velero C:\ProgramFiles\Velero
         velero version
 
