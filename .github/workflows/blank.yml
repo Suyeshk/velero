@@ -44,7 +44,11 @@ jobs:
         ./velero version
     - name: Set environment path
       run: |
-         echo "::set-env name=PATH::${{ env.PATH }};/home/runner/work/velero/velero/velero-v1.5.2-linux-amd64"
+         PATH=/home/runner/work/velero/velero/velero-v1.5.2-linux-amd64:$PATH
+    - name: Allow unsecure commands
+      run: 
+       echo "::set-env name=ACTIONS_ALLOW_UNSECURE_COMMANDS::true"
+
          echo "testing2"
     - name: Install velero in eks
       run: |
