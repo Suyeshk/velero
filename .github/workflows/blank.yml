@@ -36,9 +36,9 @@ jobs:
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
         tar -xvzf velero.tar.gz
     - name: Create NameSpace backup in S3
-      run: |
       env:
        PATH_NAME: ./velero
           $PATH_NAME version
-          $PATH_NAME backup create pipebackup2 --include-namespaces eksbackupdemo3
+      run: |
+          $PATH_NAME backup create pipebackup3 --include-namespaces eksbackupdemo3
     
