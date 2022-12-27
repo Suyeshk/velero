@@ -54,5 +54,5 @@ jobs:
       run: |
           cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
           pwd
-          $PATH_NAME backup create pipebackup1 --include-namespaces eksbackupdemo3
+          $PATH_NAME backup create pipebackup2 --include-namespaces eksbackupdemo3
     
