@@ -49,8 +49,10 @@ jobs:
 
          echo "testing2"
     - name: Install velero in eks
+      env:
+         PATH_NAME: /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
       run: |
           cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
           pwd
-          ./velero backup create pipebackup1 --include-namespaces eksbackupdemo3
+          $PATH_NAME backup create pipebackup1 --include-namespaces eksbackupdemo3
     
