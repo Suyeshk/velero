@@ -42,5 +42,5 @@ jobs:
          PATH_NAME: ./velero
       run: |
           cd velero-v1.5.2-linux-amd64
-          $PATH_NAME backup create pipebackup4 --include-namespaces eksbackupdemo3
+          $PATH_NAME backup create latestbackup --include-namespaces eksbackupdemo3
      
