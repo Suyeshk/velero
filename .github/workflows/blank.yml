@@ -50,7 +50,7 @@ jobs:
          echo "testing2"
     - name: Install velero in eks
       env:
-         PATH_NAME: /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
+         PATH_NAME: ./velero
       run: |
           cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
           pwd
