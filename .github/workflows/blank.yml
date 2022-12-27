@@ -37,8 +37,7 @@ jobs:
         tar -xvzf velero.tar.gz
     - name: Create NameSpace backup in S3
       env:
-       PATH_NAME: ./velero
-          $PATH_NAME version
+        PATH_NAME: ./velero
       run: |
           $PATH_NAME backup create pipebackup3 --include-namespaces eksbackupdemo3
     
