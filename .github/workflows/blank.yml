@@ -9,6 +9,8 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+       PATH_NAME: ./velero
 
     steps:
     - name: Checkout
@@ -35,24 +37,8 @@ jobs:
       run: |
         curl -L https://github.com/vmware-tanzu/velero/releases/download/v1.5.2/velero-v1.5.2-linux-amd64.tar.gz -o velero.tar.gz
         tar -xvzf velero.tar.gz
-        pwd
-        ls -lrth
-        cd velero-v1.5.2-linux-amd64
-        pwd
-        ls -lrth
-        echo "testing1"
-        ./velero version
-    - name: Set environment path
+        $PATH_NAME version
+    - name: Create NameSpace backup in S3
       run: |
-         PATH=/home/runner/work/velero/velero/velero-v1.5.2-linux-amd64:$PATH
-         velero version
-
-         echo "testing2"
-    - name: Install velero in eks
-      env:
-         PATH_NAME: ./velero
-      run: |
-          cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
-          pwd
           $PATH_NAME backup create pipebackup2 --include-namespaces eksbackupdemo3
     
