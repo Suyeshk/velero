@@ -43,7 +43,6 @@ jobs:
         echo "testing1"
         ./velero version
     - name: Set environment path
-      shell: bash
       run: |
          echo "::set-env name=PATH::${{ env.PATH }}; /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64'
          echo "testing2"
