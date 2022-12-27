@@ -40,7 +40,7 @@ jobs:
     - name: Create NameSpace backup in S3
       env:
          PATH_NAME: ./velero
-      run: 
+      run: |
           cd velero-v1.5.2-linux-amd64
           $PATH_NAME backup create pipebackup4 --include-namespaces eksbackupdemo3
      
