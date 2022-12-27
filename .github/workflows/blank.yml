@@ -42,8 +42,12 @@ jobs:
         ls -lrth
         echo "testing1"
         ./velero version
+    - name: Set environment path
+      shell: bash
+      run: |
+         echo 'export /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64' >> $GITHUB_ENV
         
-        echo "testing2"
+         echo "testing2"
     - name: Install velero in eks
       run: |
           cd /home/runner/work/velero/velero/velero-v1.5.2-linux-amd64
